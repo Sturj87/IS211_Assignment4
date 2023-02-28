@@ -1,6 +1,9 @@
 import random
 import time
 
+# Saar T. CUNYSPS SPRING 2023
+# IS211 A#4
+
 def generate_random_list(length):
     random_list = []
     for i in range(length):
