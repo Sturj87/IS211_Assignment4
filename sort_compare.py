@@ -1,11 +1,14 @@
 import random
 import time
 
-def generate_random_list(length):
-    random_list = []
+# Saar T. CUNYSPS SPRING 2023
+# IS211 A#4
+
+def random_list(length):
+    r_list = []
     for i in range(length):
-        random_list.append(random.randint(1, 1000))
-    return random_list
+        r_list.append(random.randint(1, 1000))
+    return r_list
 
 
 def insertion_sort(my_list):
@@ -41,28 +44,28 @@ def main():
 
     for length in list_lengths:
         print(f"Testing sort algorithms on a list of {length} integers")
-        random_list = generate_random_list(length)
+        r_list = random_list(length)
 
         start = time.time()
-        sorted_list = sorted(random_list)
+        sorted_list = sorted(r_list)
         end = time.time()
         python_sort_time = end - start
         print(f"Python's built-in sort took {python_sort_time:.6f} seconds")
 
         start = time.time()
-        shell_sort(random_list.copy())
+        shell_sort(r_list.copy())
         end = time.time()
         shell_sort_time = end - start
         print(f"Shell sort took {shell_sort_time:.6f} seconds")
 
         start = time.time()
-        python_sort(random_list.copy())
+        python_sort(r_list.copy())
         end = time.time()
         python_sort_time = end - start
         print(f"Python sort took {python_sort_time:.6f} seconds")
 
         start = time.time()
-        insertion_sort(random_list.copy())
+        insertion_sort(r_list.copy())
         end = time.time()
         insertion_sort_time = end - start
         print(f"Insertion sort took {insertion_sort_time:.6f} seconds")
